@@ -4,8 +4,16 @@ namespace MVC_model2\Engine;
 
 abstract class Model {
     
+    /**
+     * Object of the class PDO
+     * @var object
+     */
     protected $pdo;
     
+    /**
+     * This function sets connection with the database
+     * @return void
+     */
     public function __construct() {
         try {
             $this->pdo = new PDO(DB_TYPE . ':host=' .DB_HOST . ';dbname=' . DB_NAME,
